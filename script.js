@@ -1,12 +1,12 @@
 //U54529624
 // Initializes the SVG container with specified dimensions.
 const data = [100, 420, 230, 850, 560, 925];
-    const barHeight = 20;
-    const barMargin = 1;
-    const width = 500;
-    const height = data.length * (barHeight + barMargin);
+const barHeight = 20;
+const barMargin = 1;
+const width = 500;
+const height = data.length * (barHeight + barMargin);
 
-    const svg = d3.select("body").append("svg")
+const svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -32,13 +32,10 @@ bar.append("rect")
 
 // Adds text labels to bars.
 bar.append("text")
-    .attr("x", d => xScale(d) - 5)
+    .attr("x", d => xScale(d) - 5) // Set initial position for text
     .attr("y", barHeight / 2)
     .attr("dy", ".35em")
-    .text(d => d)
-    .transition()
-    .duration(800)
-    .attr("x", d => xScale(d) - 5);
+    .text(d => d);
 
 // Implements transitions and hover effects for bars.
 bar.selectAll("rect")
@@ -54,4 +51,5 @@ bar.selectAll("rect")
             .duration(200)
             .attr("fill", "steelblue");
     });
+
 
