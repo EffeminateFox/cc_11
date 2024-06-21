@@ -32,9 +32,10 @@ bar.append("rect")
 
 // Adds text labels to bars.
 bar.append("text")
-    .attr("x", d => xScale(d) - 5) // Set initial position for text
+    .attr("x", 5) // Aligsn text to the left of the bars 
     .attr("y", barHeight / 2)
     .attr("dy", ".35em")
+    .attr("fill", "black") // Sets text color to black
     .text(d => d);
 
 // Implements transitions and hover effects for bars.
